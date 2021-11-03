@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>实验二</title>
+<style type="text/css">
+        #header {
+            width: 100%;
+            height: 58px;
+            background-color: #191D3A;
+        }
+ 
+        .inner {
+            width: 100%;
+            height: 58px;
+            margin: 0 auto;
+            clear: both;
+        }
+ 
+        .inner .logo {
+            float: left;
+            width: 300px;
+            height: 44px;
+            margin:7px 0;
+        }
+ 
+        .header .nav {
+            float: left;
+            height: 60px;
+        }
+ 
+        .header .inner .navs #current {
+            color:#000000;
+            background-color: #FFA500;
+        }
+ 
+        .header .inner .navs a {
+            float: left;
+            width: 85px;
+            height: 58px;
+            border-left: 1px solid #E6E6FA;
+            border-right: 1px solid #E6E6FA;
+            color: #818496;
+            text-decoration: none;
+            text-align: center;
+            line-height: 58px;
+            font-size: 14px;
+        }
+ 
+        .header .inner .navs .joinus {
+            margin: 12px 0 0 10px;
+            height: 32px;
+            width: 98px;
+            border: 1px solid #FFFACD;
+            border-radius: 3px;
+            background-color: #DAA520;
+            color: #fff;
+            text-align: center;
+            line-height: 32px;
+        }
+ 
+        .header .inner .nav:hover {
+            color: #000000;
+        }
+ 
+        .header .inner .navs .joinus:hover {
+            background-color: #FFD700;
+        }
+#container{
+width:100%;
+        margin: 0 auto;  /* 居中对齐 */
+        background-color: #fff;
+        border: 1px solid gray;
+        color: #333;
+        line-height:200%;
+}
+#top{
+padding:.2em;
+background-color:#FFF8DC;
+border-bottom:2px solid gray;
+        border: 1px solid gray;
+}
+#leftnav{
+width:100px;
+padding:1em;
+float:left;
+margin: -45px;
+}
+#leftnav li a{
+		text-decoration: none;/*把文本自带的下划线去掉*/
+		color:black;/*字体颜色设置为黑色*/
+		font-size:14px;
+	}
+#leftnav li a:hover{/*如果鼠标放在栏目上，执行的变化*/
+background-color: 	#FFE4B5;/*背景变为黑色*/
+color: white;/*字体变为白色*/
+}
+#leftnav p{margin:0 0 1em 0;}
+      #content {
+      padding:1em;
+            float: right;
+            margin-left: 70px;
+            border-left: 1px solid gray;
+      }
+      #content h2 { margin: 0 0 .5em 0; }
+        #content ul li  img { 
+           width:400px;
+           height:300px;
+        }
+ 
+        #content ul li h4 {
+            text-align: left;
+            line-height: 38px;
+            font-size: 14px;
+        }
+ 
+        #content ul li .bf {
+            text-align: left;
+            height: 20px;
+        }
+ 
+        #content ul li a {
+            color: green;
+            font-size: 14px;
+            text-decoration: none;
+            background: url(imgs/sanjiaoxing.png) no-repeat right 7px;
+            padding-right: 12px;
+        }
+</style>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+var cot=0;//设置一个计数器，初始值为0；作用是用来监听点击切换的时候哪一个图片应该隐藏或者显示
+function nex(){
+  if(cot<=2){
+    $('.imgs img').eq(cot).animate({'margin-left':'-305px'},500);
+    cot++;
+  }
+}
+function pre(){
+  if(cot>0){
+    cot--;
+    $('.imgs img').eq(cot).animate({'margin-left':'0'},500);
+  }
+}
+</script>
+</head>
+<body>
+    <div id="container">
+    <div class="header">
+        <div class="inner">
+            <div class="logo">
+                <img src="./b.png" alt=""width=40%>
+            </div>
+            <div class="navs">
+                <a href="" class="nav" id="current">首页</a>
+                <a href="" class="nav">今日院线</a>
+                <a href="" class="nav">豆瓣高分电影</a>
+                <a href="" class="nav">更多推荐</a>
+                <a href="" class="nav">热播影院</a>
+                <a href="" class="nav">客服中心</a>
+                <a href="" class="joinus">加入我们</a>
+            </div>
+    <div id="top"><img src= "./btop.png"width=100%></div>
+ 
+<div id="leftnav">
+<ul>
+</br>
+<li><a href="#">科幻</a></li>
+<li><a href="#">动漫</a></li>
+<li><a href="#">恐怖</a></li>
+<li><a href="#">战争</a></li>
+<li><a href="#">言情</a></li>
+<li><a href="#">玄幻</a></li>
+<li><a href="#">喜剧</a></li>
+</ul>
+</div>
+
+<div id="content">
+<h2>影视推荐</h2>
+
+<div style="width:900px;margin:auto;overflow:hidden"> <!-- 这个最外围的容器div宽度为900px，每张图宽为300px，所以只显示3张，剩下的图超出容器隐藏起来 -->
+  <div class="imgs" style="width:50000px;"><!--这个div的作用是让所有的图片都排在同一水平上，这样子切换的时候效果会更好-->
+    <img src="./唐探3.png" width=300px,height=300px/><!--这里的图片换上到时候自己对应的图片-->
+    <img src="./大耳朵图图.png"width=300px,height=300px />
+    <img src="./盗梦空间.png" width=300px,height=300px/>
+    <img src="./艾娃.png"width=300px,height=300px />
+    <img src="./正义联盟.jpg"width=300px,height=300px />
+  </div>
+  <div>
+    <div onclick="pre()" style="float:left;cursor:pointer">上一页</div>
+    <div onclick="nex()" style="float:right;cursor:pointer">下一页</div>
+  </div>
+</div>
+
+<h3>我的影库</h3>
+    <div class="content">
+        <ul>
+            <li>
+               <img src="./剑心人诛篇.png" alt="">
+                <h4>剑心人诛篇</h4>
+                <p class="bf">
+                    <a href="">点击播放</a>
+                </p>
+            </li>
+            <li>
+               <img src="./剑心追忆.png" alt="">
+                <h4>剑心追忆篇</h4>
+                <p class="bf">
+                    <a href="">点击播放</a>
+                </p>
+            </li>
+            <li>
+                <img src="./一秒钟.jpg" alt="">
+                <h4>一秒钟</h4>
+                <p class="bf">
+                    <a href="">点击播放</a>
+                </p>
+            </li>
+        </ul>
+</div>
+
+</body>
+</html>
